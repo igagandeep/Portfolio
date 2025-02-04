@@ -1,10 +1,16 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
+import {motion} from "motion/react";
 
 const Footer = ({isDarkMode}) => {
   return (
-    <div className="mt-20">
+    <motion.div 
+    initial={{ opacity: 0}}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    
+    className="mt-20">
       <div className="flex flex-col items-center text-center">
         <Image src={assets.logo} alt="logo" className="w-36 mx-auto mb-2" />
         <div className="w-max flex items-center gap-2 max-auto ">
@@ -32,7 +38,7 @@ const Footer = ({isDarkMode}) => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
