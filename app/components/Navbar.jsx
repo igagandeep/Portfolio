@@ -40,7 +40,11 @@ const Navbar = () => {
           />
         </a>
 
-        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full  px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50"} `}>
+        <ul
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full  px-12 py-3 ${
+            isScroll ? "" : "bg-white shadow-sm bg-opacity-50"
+          } `}
+        >
           <li>
             <a href="#top" className="font-Ovo">
               Home
@@ -52,15 +56,16 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#services" className="font-Ovo">
-              Services
-            </a>
-          </li>
-          <li>
             <a href="#work" className="font-Ovo">
               My Work
             </a>
           </li>
+          <li>
+            <a href="#blog" className="font-Ovo">
+              Blog
+            </a>
+          </li>
+
           <li>
             <a href="#contact" className="font-Ovo">
               Contact me
@@ -109,15 +114,16 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#services" className="font-Ovo" onClick={closeMenu}>
-              Services
-            </a>
-          </li>
-          <li>
             <a href="#work" className="font-Ovo" onClick={closeMenu}>
               My Work
             </a>
           </li>
+          <li>
+            <a href="#blog" className="font-Ovo" onClick={closeMenu}>
+              Blog
+            </a>
+          </li>
+
           <li>
             <a href="#contact" className="font-Ovo" onClick={closeMenu}>
               Contact me
