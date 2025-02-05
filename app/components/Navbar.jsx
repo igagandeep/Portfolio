@@ -24,25 +24,25 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   }, []);
   return (
     <>
-      <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark: hidden">
+      <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:opacity-0">
         <Image src={assets.header_bg_color} alt="" className="w-full " />
       </div>
       <nav
         className={`w-full fixed px-5  lg:px-8 xl:px-[8%] flex items-center justify-between z-50 ${
-          isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20" : ""
+          isScroll
+            ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
+            : ""
         }`}
       >
         <a href="#top">
-          <Image
-            src={assets.logo}
-            className="w-28 mt-2 cursor-pointer mr-14"
-            alt="logo pic"
-          />
+          <h1 className="text-4xl font-SigmarOne">Gagan<span className="text-5xl text-red-700">.</span></h1>
         </a>
 
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full  px-12 py-3 ${
-            isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full mt-1 px-12 py-3 ${
+            isScroll
+              ? ""
+              : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
           } `}
         >
           <li>
@@ -61,14 +61,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             </a>
           </li>
           <li>
-            <a href="#blog" className="font-Ovo">
-              Blog
-            </a>
-          </li>
-
-          <li>
             <a href="#contact" className="font-Ovo">
               Contact me
+            </a>
+          </li>
+          <li>
+            <a href="/blog" target="_blank" className="font-Ovo">
+              Blog
             </a>
           </li>
         </ul>
@@ -87,10 +86,18 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           >
             {" "}
             Contact{" "}
-            <Image src={isDarkMode ? assets.arrow_icon_dark  :assets.arrow_icon} className="w-3" alt="contact icon" />
+            <Image
+              src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}
+              className="w-3"
+              alt="contact icon"
+            />
           </a>
           <button className="block md:hidden ml-3" onClick={openMenu}>
-            <Image src={isDarkMode ? assets.menu_white : assets.menu_black} className="w-6" alt="" />
+            <Image
+              src={isDarkMode ? assets.menu_white : assets.menu_black}
+              className="w-6"
+              alt=""
+            />
           </button>
         </div>
 
@@ -122,15 +129,15 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               My Work
             </a>
           </li>
-          <li>
-            <a href="#blog" className="font-Ovo" onClick={closeMenu}>
-              Blog
-            </a>
-          </li>
 
           <li>
             <a href="#contact" className="font-Ovo" onClick={closeMenu}>
               Contact me
+            </a>
+          </li>
+          <li>
+            <a href="/blog" target="_blank" className="font-Ovo" onClick={closeMenu}>
+              Blog
             </a>
           </li>
         </ul>

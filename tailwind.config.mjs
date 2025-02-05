@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         Outfit: ["Outfit", "sans-serif"],
         Ovo: ["Ovo", "sans-serif"],
+        SigmarOne: ["Sigmar One", "serif"]
       },
     },
     boxShadow: {

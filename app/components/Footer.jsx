@@ -12,7 +12,7 @@ const Footer = ({isDarkMode}) => {
     
     className="mt-20">
       <div className="flex flex-col items-center text-center">
-        <Image src={assets.logo} alt="logo" className="w-36 mx-auto mb-2" />
+      <h1 className="text-4xl font-SigmarOne">Gagan<span className="text-5xl text-red-700">.</span></h1>
         <div className="w-max flex items-center gap-2 max-auto ">
           <Image src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} alt="mail icon" className="w-6" />
           igagandeep95@gmail.com

@@ -43,7 +43,7 @@ const About = ({ isDarkMode }) => {
           <Image
             src={assets.profile_img}
             alt="user"
-            className="w-full rounded-3xl"
+            className="w-full  rounded-3xl"
           />
         </motion.div>
         <motion.div
@@ -105,7 +105,7 @@ const About = ({ isDarkMode }) => {
 
         whileHover={{  scale:1.05 }}
 
-                className="flex items-center justify-center w-12 sm:w-14 hover:-translate-y-1 duration-500 aspect-square border border-gray-400 rounded-lg cursor-pointer"
+                className="flex items-center justify-center w-12 sm:w-14 hover:-translate-y-1 duration-500 aspect-square border border-gray-400 rounded-lg"
                 key={index}
               >
                 <Image src={tool} alt={tool} className="w-5 sm:w-7" />
