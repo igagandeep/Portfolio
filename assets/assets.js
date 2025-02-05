@@ -39,8 +39,7 @@ import nextjs from "./nextjs.png";
 import js from "./js.png";
 import typescript from "./typescript.png";
 import bitbucket from "./bitbucket.png";
-import slack from "./slack.png"
-
+import slack from "./slack.png";
 
 export const assets = {
   user_image,
@@ -84,7 +83,7 @@ export const assets = {
   js,
   typescript,
   bitbucket,
-  slack
+  slack,
 };
 
 export const workData = [
@@ -111,35 +110,7 @@ export const workData = [
     title: "Pronia Store",
     description: "Ecommerce website",
     bgImage: "/work-4.png",
-  },
-];
-
-export const serviceData = [
-  {
-    icon: assets.web_icon,
-    title: "Web design",
-    description: "Web development is the process of building, programming...",
-    link: "",
-  },
-  {
-    icon: assets.mobile_icon,
-    title: "Mobile app",
-    description:
-      "Mobile app development involves creating software for mobile devices...",
-    link: "",
-  },
-  {
-    icon: assets.ui_icon,
-    title: "UI/UX design",
-    description:
-      "UI/UX design focuses on creating a seamless user experience...",
-    link: "",
-  },
-  {
-    icon: assets.graphics_icon,
-    title: "Graphics design",
-    description: "Creative design solutions to enhance visual communication...",
-    link: "",
+    link: "https://pronia-store.netlify.app/",
   },
 ];
 
