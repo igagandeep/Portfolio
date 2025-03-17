@@ -1,5 +1,7 @@
 import { Outfit, Ovo, Sigmar_One } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -12,12 +14,12 @@ const ovo = Ovo({
 const sigmar_one = Sigmar_One({
   subsets: ["latin"],
   weight: ["400"],
-})
+});
 
 export const metadata = {
   title: "Portfolio - Gagan",
   description: "",
-  icons: "./favicon.ico"
+  icons: "./favicon.ico",
 };
 
 export default function RootLayout({ children }) {
@@ -26,7 +28,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${outfit.className} ${ovo.className} ${sigmar_one.className} antialiased leading-8 dark:bg-darkTheme dark:text-white`}
       >
-        {children}
+        <DarkModeProvider>
+          <Navbar />
+          {children}
+        </DarkModeProvider>
       </body>
     </html>
   );
