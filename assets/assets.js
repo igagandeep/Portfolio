@@ -1,4 +1,3 @@
-import user_image from "./user-image.png";
 import code_icon from "./code-icon.png";
 import code_icon_dark from "./code-icon-dark.png";
 import edu_icon from "./edu-icon.png";
@@ -40,9 +39,12 @@ import js from "./js.png";
 import typescript from "./typescript.png";
 import bitbucket from "./bitbucket.png";
 import slack from "./slack.png";
+import linkedin from "./linkedin.png";
+import github from "./github.png";
+import twitter from "./twitter.png";
+import hrank from "./hrank.png";
 
 export const assets = {
-  user_image,
   code_icon,
   code_icon_dark,
   edu_icon,
@@ -84,6 +86,10 @@ export const assets = {
   typescript,
   bitbucket,
   slack,
+  linkedin,
+  github,
+  twitter,
+  hrank,
 };
 
 export const workData = [
@@ -112,6 +118,24 @@ export const workData = [
     bgImage: "/work-4.png",
     link: "https://pronia-store.netlify.app/",
   },
+  {
+    title: "Covid-19 Tracker",
+    description: "Web App",
+    bgImage: "/covid19.jpg",
+    link: "https://covidlivecasestracker.netlify.app/",
+  },
+  {
+    title: "Portfolio",
+    description: "Web App",
+    bgImage: "/portfolio2.png",
+    link: "https://gagandeep95-portfolio.netlify.app/",
+  },
+  {
+    title: "Hulu Clone",
+    description: "Web App",
+    bgImage: "/hulu.png",
+    link: "https://hulu-clone-two-eta.vercel.app/",
+  },
 ];
 
 export const infoList = [
@@ -119,26 +143,31 @@ export const infoList = [
     icon: assets.code_icon,
     iconDark: assets.code_icon_dark,
     title: "Languages",
-    description: "HTML, CSS, JavaScript React Js, Next Js",
+    description:
+      "HTML, CSS, JavaScript, TypeScript, Git, Github, React Js, Next Js and more",
   },
   {
     icon: assets.edu_icon,
     iconDark: assets.edu_icon_dark,
     title: "Education",
-    description: "B.Tech in Computer Science",
+    description:
+      "B.Tech in Computer Science, Post Graduate Diploma in Computer Software",
   },
   {
     icon: assets.project_icon,
     iconDark: assets.project_icon_dark,
-    title: "Projects",
-    description: "Built more than 5 projects",
+    title: "Challenge Me",
+    description:
+      "Don't think I have the required knowledge or experience? try me!",
   },
 ];
 
-export const toolsData = [
-  assets.vscode,
-  assets.typescript,
-  assets.figma,
-  assets.git,
-  assets.slack,
+export const socialLinks = [
+  { icon: assets.linkedin, link: "https://www.linkedin.com/in/igagandeep95/" },
+  { icon: assets.github, link: "https://github.com/igagandeep" },
+  { icon: assets.twitter, link: "https://x.com/gagandeep180096" },
+  {
+    icon: assets.hrank,
+    link: "https://www.hackerrank.com/profile/igagandeep95",
+  },
 ];

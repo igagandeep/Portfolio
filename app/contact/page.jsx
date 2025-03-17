@@ -1,9 +1,12 @@
+"use client";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import { useDarkMode } from "../context/DarkModeContext";
 
-const Contact = ({ isDarkMode }) => {
+const Contact = () => {
+  const { isDarkMode } = useDarkMode();
   const [result, setResult] = useState("");
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -35,21 +38,15 @@ const Contact = ({ isDarkMode }) => {
       transition={{ duration: 1 }}
       className="w-full px-[12%] py-10 scroll-mt-20  bg-no-repeat bg-center bg-[length:90%_auto] dark:opacity-0"
       id="contact"
-      style={{ backgroundImage: isDarkMode ? "none"  : "url('/footer-bg-color.png')" }} 
+      style={{
+        backgroundImage: isDarkMode ? "none" : "url('/footer-bg-color.png')",
+      }}
     >
-      <motion.h4
-        initial={{ y: -20, opacity: 0 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center mb-2 text-lg font-Ovo"
-      >
-        Connect with me
-      </motion.h4>
       <motion.h2
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-center text-5xl font-Ovo"
+        className="text-center text-5xl mt-16 font-Ovo"
       >
         Get in touch
       </motion.h2>
@@ -70,7 +67,7 @@ const Contact = ({ isDarkMode }) => {
         onSubmit={onSubmit}
         className="max-w-2xl mx-auto"
       >
-        <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
+        <div className="grid grid-cols-auto gap-6 mt-8 mb-6">
           <motion.input
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -105,8 +102,8 @@ const Contact = ({ isDarkMode }) => {
         ></motion.textarea>
 
         <motion.button
-        whileHover={{scale: 1.05}}
-        transition={{duration: 0.3}}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
           type="submit"
           className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover"
         >

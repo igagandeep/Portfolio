@@ -1,8 +1,12 @@
+"use client";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
+import Link from "next/link";
 
-const Navbar = ({ isDarkMode, setIsDarkMode }) => {
+const Navbar = () => {
+  const { isDarkMode, setIsDarkMode } = useDarkMode();
   const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
 
@@ -35,7 +39,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         }`}
       >
         <a href="#top">
-          <h1 className="text-4xl font-SigmarOne">Gagan<span className="text-5xl text-red-700">.</span></h1>
+          <h1 className="text-4xl font-SigmarOne">
+            Gagan<span className="text-5xl text-red-700">.</span>
+          </h1>
         </a>
 
         <ul
@@ -46,27 +52,28 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           } `}
         >
           <li>
-            <a href="#top" className="font-Ovo">
+            <Link href="/" className="font-Ovo">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#about" className="font-Ovo">
+            <Link href="/about" className="font-Ovo">
               About me
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#work" className="font-Ovo">
+            <Link href="/work" className="font-Ovo">
               My Work
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" className="font-Ovo">
-              Contact me
-            </a>
-          </li>
-          <li>
-            <a href="/blog" target="_blank" className="font-Ovo">
+            <a
+              href="https://medium.com/@igagandeep95"
+              className="font-Ovo"
+              onClick={closeMenu}
+              target="_blank"
+              rel="noreferrer"
+            >
               Blog
             </a>
           </li>
@@ -80,8 +87,8 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               className="w-6"
             />
           </button>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50"
           >
             {" "}
@@ -91,7 +98,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               className="w-3"
               alt="contact icon"
             />
-          </a>
+          </Link>
           <button className="block md:hidden ml-3" onClick={openMenu}>
             <Image
               src={isDarkMode ? assets.menu_white : assets.menu_black}
@@ -115,28 +122,28 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             />
           </div>
           <li>
-            <a href="#top" className="font-Ovo" onClick={closeMenu}>
+            <Link href="/" className="font-Ovo" onClick={closeMenu}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#about" className="font-Ovo" onClick={closeMenu}>
+            <Link href="/about" className="font-Ovo" onClick={closeMenu}>
               About me
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#work" className="font-Ovo" onClick={closeMenu}>
+            <Link href="/work" className="font-Ovo" onClick={closeMenu}>
               My Work
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact" className="font-Ovo" onClick={closeMenu}>
-              Contact me
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/blog" target="_blank" className="font-Ovo" onClick={closeMenu}>
+            <a
+              href="https://medium.com/@igagandeep95"
+              className="font-Ovo"
+              onClick={closeMenu}
+              target="_blank"
+              rel="noreferrer"
+            >
               Blog
             </a>
           </li>
