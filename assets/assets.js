@@ -96,44 +96,44 @@ export const workData = [
   {
     title: "Prepr Labs",
     description: "Web App",
-    bgImage: "/work-1.png",
+    bgImage: "./work-1.png",
     link: "https://beta.preprlabs.org",
   },
 
   {
     title: "Netflix 2.0",
     description: "Website",
-    bgImage: "/work-2.png",
+    bgImage: "./work-2.png",
     link: "https://tourmaline-alfajores-c740e4.netlify.app",
   },
   {
     title: "Geo based app",
     description: "Web App",
-    bgImage: "/work-3.png",
+    bgImage: "./work-3.png",
     link: "https://dynamic-unicorn-54fb8e.netlify.app/",
   },
   {
     title: "Pronia Store",
     description: "Ecommerce website",
-    bgImage: "/work-4.png",
+    bgImage: "./work-4.png",
     link: "https://pronia-store.netlify.app/",
   },
   {
     title: "Covid-19 Tracker",
     description: "Web App",
-    bgImage: "/covid19.jpg",
+    bgImage: "./covid19.jpg",
     link: "https://covidlivecasestracker.netlify.app/",
   },
   {
     title: "Portfolio",
     description: "Web App",
-    bgImage: "/portfolio2.png",
+    bgImage: "./portfolio2.png",
     link: "https://gagandeep95-portfolio.netlify.app/",
   },
   {
     title: "Hulu Clone",
     description: "Web App",
-    bgImage: "/hulu.png",
+    bgImage: "./hulu.png",
     link: "https://hulu-clone-two-eta.vercel.app/",
   },
 ];
