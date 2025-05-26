@@ -3,7 +3,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { useDarkMode } from "../context/DarkModeContext";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 const Contact = () => {
   const { isDarkMode } = useDarkMode();

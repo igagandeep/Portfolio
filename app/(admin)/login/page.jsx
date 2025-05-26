@@ -45,7 +45,7 @@ useEffect(() => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded px-3 py-2 dark:text-black focus:outline-none focus:ring-2 focus:ring-black-500"
               placeholder="admin@site.com"
             />
           </div>
@@ -58,7 +58,7 @@ useEffect(() => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded px-3 py-2 dark:text-black focus:outline-none focus:ring-2 focus:ring-black-500"
               placeholder="password123"
             />
           </div>

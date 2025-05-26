@@ -3,7 +3,7 @@ import { assets, infoList, socialLinks, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { useDarkMode } from "../context/DarkModeContext";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 const About = () => {
   const { isDarkMode } = useDarkMode();
