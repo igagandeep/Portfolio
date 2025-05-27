@@ -120,7 +120,7 @@ const AddProjectForm = ({ initialData = null, onSubmit }) => {
 
         <button
           type='submit'
-          className='bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800'
+          className='bg-black text-white dark:bg-purple-700 px-4 py-2 rounded'
         >
           {initialData ? 'Update Project' : 'Save Project'}
         </button>

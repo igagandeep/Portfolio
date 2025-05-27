@@ -59,23 +59,23 @@ const Navbar = () => {
               : 'bg-white shadow-sm bg-opacity-50 dark:bg-transparent'
           }`}
         >
-          {/* + Project Button */}
-          <li>
-            <button
-              onClick={openCreate}
-              className='font-Ovo text-sm hover:underline'
-            >
-              + Project
-            </button>
-          </li>
-
-          {/* Logout (placeholder) */}
           {user && (
-            <li>
-              <button onClick={handleLogout} className='font-Ovo text-sm'>
-                Logout
-              </button>
-            </li>
+            <>
+              <li>
+                <button
+                  onClick={openCreate}
+                  className='font-Ovo text-sm hover:underline'
+                >
+                  + Project
+                </button>
+              </li>
+
+              <li>
+                <button onClick={handleLogout} className='font-Ovo text-sm'>
+                  Logout
+                </button>
+              </li>
+            </>
           )}
 
           {/* Dark Mode Toggle */}

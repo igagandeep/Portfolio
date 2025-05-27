@@ -8,8 +8,16 @@ export default function Login() {
   const [user, setUser] = useState('');
   const [pass, setPass] = useState('');
   const [err, setErr] = useState('');
-  const { login } = useAuth()
+  const { login, user : loggedInUser} = useAuth()
   const router = useRouter();
+
+
+    useEffect(() => {
+      if (loggedInUser) {
+        router.replace('/dashboard');
+      }
+    }, [loggedInUser, router]);
+  
 
 const handleSubmit = async (e) => {
     e.preventDefault();
