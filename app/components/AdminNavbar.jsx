@@ -5,13 +5,17 @@ import React, { useEffect, useState, useContext } from 'react';
 import { ProjectContext } from '@/app/context/ProjectContext';
 import { useDarkMode } from '../context/DarkModeContext';
 import AddProjectForm from './AddProjectForm';
+import { useAuth } from '../context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const { isDarkMode, setIsDarkMode } = useDarkMode();
   const [isScroll, setIsScroll] = useState(false);
   const { showModal, editing, openCreate, closeModal, submitProject } =
     useContext(ProjectContext);
+  const router = useRouter();
 
+  const { logout, user } = useAuth();
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (scrollY > 50) {
@@ -21,6 +25,11 @@ const Navbar = () => {
       }
     });
   }, []);
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
+  };
 
   return (
     <>
@@ -61,14 +70,13 @@ const Navbar = () => {
           </li>
 
           {/* Logout (placeholder) */}
-          <li>
-            <button
-              onClick={() => console.log('logout')}
-              className='font-Ovo text-sm'
-            >
-              Logout
-            </button>
-          </li>
+          {user && (
+            <li>
+              <button onClick={handleLogout} className='font-Ovo text-sm'>
+                Logout
+              </button>
+            </li>
+          )}
 
           {/* Dark Mode Toggle */}
           <li>

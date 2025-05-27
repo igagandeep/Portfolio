@@ -1,13 +1,25 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { toast } from 'react-hot-toast';
 import Image from 'next/image';
 import { ProjectContext } from '@/app/context/ProjectContext';
 import ProjectListLoader from '@/app/components/ProjectListLoader';
+import { useAuth } from '@/app/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
+    const { user } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!user) {
+      router.replace('/login');
+    }
+  }, [user, router]);
+
+  if (!user) return null;
   const { projects, deleteProject, openEdit } = useContext(ProjectContext);
 
   const handleDelete = async (id) => {

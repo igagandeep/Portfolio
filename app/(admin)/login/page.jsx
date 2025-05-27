@@ -1,76 +1,78 @@
-"use client"
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-
+'use client';
+import { useState, useEffect, useContext } from 'react';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import { useAuth } from '@/app/context/AuthContext';
 
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const router = useRouter()
+  const [user, setUser] = useState('');
+  const [pass, setPass] = useState('');
+  const [err, setErr] = useState('');
+  const { login } = useAuth()
+  const router = useRouter();
 
-useEffect(() => {
-  if (typeof window !== 'undefined') {
-    const isLoggedIn = localStorage.getItem('loggedIn')
-    if (isLoggedIn) {
-      router.replace('/dashboard') // replace avoids back nav to login
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post('http://localhost:5000/api/login', { user, pass });
+      login(data.token);
+      router.push('/dashboard');
+    } catch (e) {
+      setErr(e.response?.data?.error || 'Login failed');
     }
-  }
-}, [router])
+  };
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (email === 'admin@site.com' && password === 'password123') {
-      localStorage.setItem('loggedIn', 'true')
-      router.push('/dashboard')
-    } else {
-      setError('Invalid email or password')
-    }
-  }
 
   return (
-    <div className="min-h-screen dark:bg-darkTheme  flex items-center justify-center bg-gray-100 px-4">
-      <div className="w-full max-w-md bg-white border border-white p-8  rounded shadow-md">
-        <h2 className="text-2xl font-semibold mb-6 text-center dark:text-black">Admin Login</h2>
+    <div className=' dark:bg-darkTheme  flex  mt-40 justify-center px-4'>
+      <div className='w-full max-w-md bg-gray-100 border border-white p-8 rounded shadow-lg'>
+        <h2 className='text-2xl font-semibold mb-2 text-center dark:text-black'>
+          Admin Login
+        </h2>
 
-        {error && <p className="text-red-500 text-sm mb-4 text-center">❌ {error}</p>}
+        {err && (
+          <p className='text-red-500 text-sm mb-4 text-center'>❌ {err}</p>
+        )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className='space-y-4'>
           <div>
-            <label className="block mb-1 text-sm font-medium text-gray-700">Email</label>
+            <label className='block mb-1 text-sm font-medium text-gray-700'>
+              Email
+            </label>
             <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type='email'
+              name='email'
+               value={user}
+          onChange={e => setUser(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded px-3 py-2 dark:text-black focus:outline-none focus:ring-2 focus:ring-black-500"
-              placeholder="admin@site.com"
+              className='w-full border border-gray-300 rounded px-3 py-2 dark:text-black focus:outline-none focus:ring-2 focus:ring-black-500'
+              placeholder='admin@site.com'
             />
           </div>
 
           <div>
-            <label className="block mb-1 text-sm font-medium text-gray-700">Password</label>
+            <label className='block mb-1 text-sm font-medium text-gray-700'>
+              Password
+            </label>
             <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type='password'
+              name='password'
+               value={pass}
+          onChange={e => setPass(e.target.value)}
               required
-              className="w-full border border-gray-300 rounded px-3 py-2 dark:text-black focus:outline-none focus:ring-2 focus:ring-black-500"
-              placeholder="password123"
+              className='w-full border border-gray-300 rounded px-3 py-2 dark:text-black focus:outline-none focus:ring-2 focus:ring-black-500'
+              placeholder='please enter your password'
             />
           </div>
 
           <button
-            type="submit"
-            className="w-full border border-white bg-black dark:text-white dark:bg-darkTheme  text-white py-2 rounded  hover:bg-black transition"
+            type='submit'
+            className='w-full border border-white bg-black dark:text-white dark:bg-darkTheme  text-white py-2 rounded  hover:bg-black transition'
           >
             Login
           </button>
         </form>
       </div>
     </div>
-  )
+  );
 }
