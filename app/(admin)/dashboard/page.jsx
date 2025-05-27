@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useContext, useEffect } from 'react';
-
 import { toast } from 'react-hot-toast';
 import Image from 'next/image';
 import { ProjectContext } from '@/app/context/ProjectContext';
@@ -10,7 +9,7 @@ import { useAuth } from '@/app/context/AuthContext';
 import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
-    const { user } = useAuth();
+  const { user } = useAuth();
   const router = useRouter();
 
   useEffect(() => {

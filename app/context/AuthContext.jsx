@@ -1,4 +1,3 @@
-// context/AuthContext.jsx
 'use client';
 
 import { createContext, useContext, useState, useEffect } from 'react';
@@ -9,7 +8,6 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
   const [user,  setUser]  = useState(null);
 
-  // On mount: grab any existing token, validate expiry, set user
   useEffect(() => {
     const stored = localStorage.getItem('token');
     if (!stored) return;
@@ -18,7 +16,7 @@ export function AuthProvider({ children }) {
       const { exp, user: payloadUser } = JSON.parse(atob(stored.split('.')[1]));
       if (exp * 1000 > Date.now()) {
         setToken(stored);
-        setUser(payloadUser);          // ← use the decoded user, not stale `token`
+        setUser(payloadUser);    
       } else {
         localStorage.removeItem('token');
       }
@@ -28,7 +26,6 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  // Call this after you get a token from the server
   function login(newToken) {
     localStorage.setItem('token', newToken);
     setToken(newToken);
@@ -41,7 +38,6 @@ export function AuthProvider({ children }) {
     }
   }
 
-  // Call this to log out
   function logout() {
     localStorage.removeItem('token');
     setToken(null);
