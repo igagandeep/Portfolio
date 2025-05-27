@@ -15,7 +15,27 @@ const Work = () => {
   }, []);
 
   if (projects === null) {
-    return 'Loading';
+    return (
+      <div className='w-full px-[12%] py-10' id='work'>
+        <h2 className='text-center text-5xl font-Ovo mt-20'>My latest work</h2>
+        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-8 gap-5'>
+          {Array.from({ length: 8 }).map((_, index) => (
+            <div
+              key={index}
+              className='h-64 w-full bg-gray-300 animate-pulse rounded-10 relative'
+            >
+              <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between'>
+                <div>
+                  <div className='h-4 w-24 bg-gray-200 rounded mb-2'></div>
+                  <div className='h-3 w-16 bg-gray-200 rounded'></div>
+                </div>
+                <div className='w-9 aspect-square rounded-full border bg-gray-200'></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   }
 
   return (

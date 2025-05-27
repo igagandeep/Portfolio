@@ -46,7 +46,7 @@ const Navbar = () => {
             : ''
         }`}
       >
-        <a href='#top'>
+        <a href='/'>
           <h1 className='text-4xl font-SigmarOne'>
             Gagan<span className='text-5xl text-red-700'>.</span>
           </h1>
