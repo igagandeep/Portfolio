@@ -57,7 +57,7 @@ const About = () => {
           className="flex-1"
         >
           <p className="mb-10 max-w-2xl font-Ovo">
-            I am a dedicated Frontend Developer with 1+ years of experience in
+            I am a dedicated Full Stack Developer with 2+ years of experience in
             the field. Over the past year, I have worked on impactful projects,
             refining my technical skills and contributing to the success of my
             team. My experience has allowed me to develop a strong foundation in
