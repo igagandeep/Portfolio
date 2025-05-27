@@ -7,6 +7,7 @@ import { useDarkMode } from '../context/DarkModeContext';
 import AddProjectForm from './AddProjectForm';
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
+import { FaPlus } from 'react-icons/fa';
 
 const Navbar = () => {
   const { isDarkMode, setIsDarkMode } = useDarkMode();
@@ -46,7 +47,7 @@ const Navbar = () => {
             : ''
         }`}
       >
-        <a href='/'>
+        <a href='/Portfolio'>
           <h1 className='text-4xl font-SigmarOne'>
             Gagan<span className='text-5xl text-red-700'>.</span>
           </h1>
@@ -64,9 +65,9 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={openCreate}
-                  className='font-Ovo text-sm hover:underline'
+                  className='font-Ovo text-sm hover:underline flex items-center'
                 >
-                  + Project
+                  <FaPlus className='mr-1' /> Project
                 </button>
               </li>
 
