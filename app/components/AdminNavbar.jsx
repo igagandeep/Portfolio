@@ -47,7 +47,7 @@ const Navbar = () => {
             : ''
         }`}
       >
-        <a href='/'>
+        <a href='/Portfolio'>
           <h1 className='text-4xl font-SigmarOne'>
             Gagan<span className='text-5xl text-red-700'>.</span>
           </h1>
