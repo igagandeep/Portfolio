@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }) {
     <>
       <ProjectProvider>
         <AdminNavbar />
-        <main className='pt-20'>{children}</main>
+        <main className='pt-24'>{children}</main>
 
         <Toaster position='top-right' toastOptions={{ duration: 3000 }} />
       </ProjectProvider>
