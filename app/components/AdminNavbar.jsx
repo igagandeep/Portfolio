@@ -85,7 +85,7 @@ const Navbar = () => {
               <Image
                 src={isDarkMode ? assets.sun_icon : assets.moon_icon}
                 alt='toggle theme'
-                className='w-5 mt-1'
+                className='w-5 mt-2'
               />
             </button>
           </li>
